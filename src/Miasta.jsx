@@ -34,14 +34,12 @@ const MiastaDane = [
         country: 'Egipt',
         population: 985000,
     },
-
 ]
 
 function Miasta( {wyszukiwanie,IdMiasta} )
 {
     const [szukanie,setSzukanie] = useState("");
     const [idMiasta,setIdMiasta] = useState(0);
-
     return (
         <div>
             {idMiasta === 0 && <div>
@@ -62,13 +60,7 @@ function Miasta( {wyszukiwanie,IdMiasta} )
                                 }
                             </>
                         )}
-
-
-
-
                     )
-
-
             }
             {console.log(idMiasta)}
             <div className="Lista">
@@ -78,27 +70,16 @@ function Miasta( {wyszukiwanie,IdMiasta} )
                             <>
                                 {((miasto.name.toLowerCase().includes(szukanie) || miasto.name.includes(szukanie)) && idMiasta === 0)&&
                                     <button   onClick={() => {setIdMiasta(miasto.id); IdMiasta = miasto.id}} key={miasto.id} className="Element">
-                                        <h2>
-                                            {miasto.name}
-                                        </h2>
-                                        <p>
-                                            {miasto.country} - Populacja {miasto.population}
-                                        </p>
-                                    </button>
+                                        <h2>{miasto.name}</h2>h      
+                                        <p>{miasto.country} - Populacja {miasto.population}</p>
+                                    </button>`    
                                 }
                             </>
                         )}
-
-
-
-
                     )
                 }
             </div>
         </div>
-
-
-
     )
 }
 export default  Miasta;
